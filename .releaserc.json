@@ -64,16 +64,6 @@
       }
     ],
     [
-      "@semantic-release/github",
-      {
-        "assets": [
-          [
-            "docs/CHANGELOG.md"
-          ]
-        ]
-      }
-    ],
-    [
       "@semantic-release/git",
       {
         "assets": [

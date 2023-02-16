@@ -1,22 +1,45 @@
 [tool.poetry]
-name = "jupyter-book-template"
-version = "1.0.2"
-description = "A Template for Jupyter-Book with CI/CD workflows"
+name = "python-template"
+version = "0.1.1"
+description = "A Template for Python Projects"
 authors = ["Young Joon Lee <entelecheia@hotmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "jupyter_book_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 
-[tool.poetry.dev-dependencies]
-jupyter-book = "^0.13"
-cookiecutter = "^2.0"
-matplotlib = "^3.4"
-numpy = "^1.20"
+[tool.poetry.group.release.dependencies]
+python-semantic-release = "^7.33.1"
 ghp-import = "^2.1.0"
+setuptools-scm = "^7.1.0"
+
+[tool.poetry.group.book.dependencies]
+jupyter-book = "^0.13.2"
+cookiecutter = "^2.1.1"
+matplotlib = "^3.7.0"
+numpy = "^1.24.2"
+
+
+[tool.poetry.group.dev.dependencies]
+python-semantic-release = "^7.33.1"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = 'setuptools.build_meta'
+
+[tool.setuptools_scm]
+write_to = "src/_version.py"
+write_to_template = '__version__ = "{version}"'
+tag_regex = '^(?P<prefix>v)?(?P<version>[^\+]+)(?P<suffix>.*)?$'
+
+[tool.semantic_release]
+branch = "main"
+version_variable = "src/__init__.py:__version__"
+version_toml = "pyproject.toml:tool.poetry.version"
+version_source = "tag"
+commit_version_number = true                        # required for version_source = "tag"
+tag_commit = true
+upload_to_pypi = false
+upload_to_release = false
+hvcs = "github"                                     # hosting version control system, gitlab is also supported
