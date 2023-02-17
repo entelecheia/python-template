@@ -19,20 +19,6 @@
 help:  ## Display this help
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
-##@ Testing
-
-.PHONY: unit-tests
-unit-tests: ## run unit-tests with pytest
-	@pytest --doctest-modules
-
-.PHONY: unit-tests-cov
-unit-tests-cov: ## run unit-tests with pytest and show coverage (terminal + html)
-	@pytest --doctest-modules --cov=src --cov-report term-missing --cov-report=html
-
-.PHONY: unit-tests-cov-fail
-unit-tests-cov-fail: ## run unit tests with pytest and show coverage (terminal + html) & fail if coverage too low & create files for CI
-	@pytest --doctest-modules --cov=src --cov-report term-missing --cov-report=html --cov-fail-under=80 --junitxml=pytest.xml | tee pytest-coverage.txt
-
 ##@ Formatting
 
 .PHONY: format-black
@@ -75,6 +61,20 @@ lint: lint-black lint-isort lint-flake8 lint-mypy ## run all linters
 .PHONY: run
 run: ## run the main script
 	@poetry run python src/main.py
+
+##@ Testing
+
+.PHONY: unit-tests
+unit-tests: ## run unit-tests with pytest
+	@poetry run pytest --doctest-modules
+
+.PHONY: unit-tests-cov
+unit-tests-cov: ## run unit-tests with pytest and show coverage (terminal + html)
+	@poetry run pytest --doctest-modules --cov=src --cov-report term-missing --cov-report=html
+
+.PHONY: unit-tests-cov-fail
+unit-tests-cov-fail: ## run unit tests with pytest and show coverage (terminal + html) & fail if coverage too low & create files for CI
+	@poetry run pytest --doctest-modules --cov=src --cov-report term-missing --cov-report=html --cov-fail-under=80 --junitxml=pytest.xml | tee pytest-coverage.txt
 
 ##@ Jupyter-Book
 
