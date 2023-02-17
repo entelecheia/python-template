@@ -145,3 +145,6 @@ install-linters: ## install linters
 
 install-release: ## install release tools
 	@poetry install --only release
+
+install-precommit: ## install pre-commit hooks
+	@pre-commit install
