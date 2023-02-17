@@ -1,5 +1,9 @@
 <!--next-version-placeholder-->
 
+## v1.0.2 (2023-02-17)
+### Fix
+* **fix:** Release ([`68e5dfd`](https://github.com/entelecheia/python-template/commit/68e5dfd19aef90f1a808ab07023b657b629809b8))
+
 ## v1.0.1 (2023-02-17)
 ### Fix
 * **build:** Remove node modules ([`8e7a3c0`](https://github.com/entelecheia/python-template/commit/8e7a3c057b5c9511e5f2c53ba5dcc3dcc81dec5f))
