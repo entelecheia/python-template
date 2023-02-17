@@ -2,12 +2,10 @@
 
 # Importing the libraries
 
-import os
-import sys
 from _version import __version__
 
 
-def main():
+def main() -> None:
     """This is the main function of the project"""
     print("This is the main function of the project")
     print(f"The version of the project is: {__version__}")
