@@ -8,9 +8,17 @@
 
 A Template for Python Projects
 
-## References
+## Usage
 
-- [5 Best Practices for Versioning Your Python Packages](https://blog.inedo.com/python-best-practices-for-versioning-python-packages-in-the-enterprise)
+### Create a new repository
+
+1. Click the `Use this template` button
+2. Enter a name for your repository
+3. Click `Create repository from template`
+
+## License
+
+This project is released under the [MIT License][license-url].
 
 <!-- Links: -->
 
