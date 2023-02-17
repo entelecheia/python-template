@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-template"
-version = "1.0.2"
+version = "1.0.3-rc.1"
 description = "A Template for Python Projects"
 authors = ["Young Joon Lee <entelecheia@hotmail.com>"]
 license = "MIT"

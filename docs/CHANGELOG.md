@@ -1,5 +1,9 @@
 <!--next-version-placeholder-->
 
+## v1.0.3-rc.1 (2023-02-17)
+### Fix
+* **release:** Provide auth token, add prerelease action ([`8ff9ce6`](https://github.com/entelecheia/python-template/commit/8ff9ce6c090a46f8aadc470ac61b5823149af29d))
+
 ## v1.0.2 (2023-02-17)
 ### Fix
 * **fix:** Release ([`68e5dfd`](https://github.com/entelecheia/python-template/commit/68e5dfd19aef90f1a808ab07023b657b629809b8))
