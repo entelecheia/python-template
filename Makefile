@@ -120,6 +120,9 @@ next-changelog: ## returns the next changelog
 release-noop: ## release without changing anything
 	@poetry run semantic-release publish --noop
 
+release-ci: ## release in CI
+	@poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>"
+
 scm-version: ## returns the version from the setuptools_scm
 	@poetry run python -m setuptools_scm
 
@@ -130,3 +133,6 @@ install-deps: ## install dependencies
 
 install-linters: ## install linters
 	@poetry install --with lint
+
+install-release: ## install release tools
+	@poetry install --only release

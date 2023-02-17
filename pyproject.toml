@@ -5,6 +5,7 @@ description = "A Template for Python Projects"
 authors = ["Young Joon Lee <entelecheia@hotmail.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
@@ -84,13 +85,17 @@ tag_regex = '^(?P<prefix>v)?(?P<version>[^\+]+)(?P<suffix>.*)?$'
 
 [tool.semantic_release]
 branch = "main"
-version_variable = "src/__init__.py:__version__"
 version_toml = "pyproject.toml:tool.poetry.version"
 version_source = "tag"
 commit_version_number = true # required for version_source = "tag"
+prerelease_tag = "rc"
+major_on_zero = true
 tag_commit = true
-upload_to_pypi = false
+changelog_file = "docs/CHANGELOG.md"
+upload_to_repository = false
+repository = "pypi"
 upload_to_release = false
+build_command = "poetry build"
 hvcs = "github" # hosting version control system, gitlab is also supported
 
 [build-system]

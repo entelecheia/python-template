@@ -1,3 +1,5 @@
+<!--next-version-placeholder-->
+
 ## 1.0.0 (2023-02-16)
 
 ### Features

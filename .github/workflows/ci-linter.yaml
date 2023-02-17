@@ -1,5 +1,5 @@
 ---
-name: Lint
+name: lint
 
 #############################
 # Start the job on all push #
