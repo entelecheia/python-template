@@ -127,3 +127,6 @@ scm-version: ## returns the version from the setuptools_scm
 
 install-deps: ## install dependencies
 	@poetry install
+
+install-linters: ## install linters
+	@poetry install --with lint
