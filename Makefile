@@ -105,13 +105,13 @@ clean: clean-cov clean-book-build ## run all clean commands
 
 ##@ Releases
 
-current-version: ## returns the current version
+version: ## returns the current version
 	@poetry run semantic-release print-version --current
 
 next-version: ## returns the next version
 	@poetry run semantic-release print-version --next
 
-current-changelog: ## returns the current changelog
+changelog: ## returns the current changelog
 	@poetry run semantic-release changelog --released
 
 next-changelog: ## returns the next changelog
