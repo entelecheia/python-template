@@ -70,6 +70,12 @@ lint-mypy-report: ## run mypy & create report
 
 lint: lint-black lint-isort lint-flake8 lint-mypy ## run all linters
 
+##@ Running & Debugging
+
+.PHONY: run
+run: ## run the main script
+	@poetry run python src/main.py
+
 ##@ Jupyter-Book
 
 book-build: ## build documentation locally
@@ -111,7 +117,7 @@ current-changelog: ## returns the current changelog
 next-changelog: ## returns the next changelog
 	@poetry run semantic-release changelog --unreleased
 
-publish-noop: ## publish command
+release-noop: ## release without changing anything
 	@poetry run semantic-release publish --noop
 
 release-dry-run: ## dry-run command

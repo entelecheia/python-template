@@ -6,3 +6,7 @@ _version.py
 
 # Jupyter Notebook
 _build/
+
+# Python
+*.py[cod]
+__pycache__/

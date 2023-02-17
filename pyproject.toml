@@ -11,7 +11,6 @@ python = "^3.8"
 
 [tool.poetry.group.release.dependencies]
 python-semantic-release = "^7.33.1"
-ghp-import = "^2.1.0"
 setuptools-scm = "^7.1.0"
 
 [tool.poetry.group.book.dependencies]
@@ -19,10 +18,18 @@ jupyter-book = "^0.13.2"
 cookiecutter = "^2.1.1"
 matplotlib = "^3.7.0"
 numpy = "^1.24.2"
+ghp-import = "^2.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
 python-semantic-release = "^7.33.1"
+commitizen = "^2.42.0"
+
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "1.0.0"
+tag_format = "v$version"
 
 [build-system]
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
