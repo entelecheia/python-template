@@ -37,11 +37,11 @@ unit-tests-cov-fail: ## run unit tests with pytest and show coverage (terminal +
 
 .PHONY: format-black
 format-black: ## black (code formatter)
-	@black .
+	@poetry run black .
 
 .PHONY: format-isort
 format-isort: ## isort (import formatter)
-	@isort .
+	@poetry run isort .
 
 .PHONY: format
 format: format-black format-isort ## run all formatters
@@ -119,9 +119,6 @@ next-changelog: ## returns the next changelog
 
 release-noop: ## release without changing anything
 	@poetry run semantic-release publish --noop
-
-release-dry-run: ## dry-run command
-	@npx semantic-release --dry-run
 
 scm-version: ## returns the version from the setuptools_scm
 	@poetry run python -m setuptools_scm
