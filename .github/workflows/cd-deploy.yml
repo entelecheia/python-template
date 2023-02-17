@@ -5,11 +5,11 @@ on:
   workflow_call:
   workflow_dispatch:
   # Trigger the workflow on push to main branch
-  push:
-    branches:
-      - main
-    paths:
-      - "book/**"
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - "book/**"
 
 permissions:
   contents: write
