@@ -1,5 +1,5 @@
 ---
-name: release
+name: prerelease
 
 on:
   workflow_call:
@@ -7,6 +7,8 @@ on:
   # push:
   #   branches:
   #     - main
+  #   paths:
+  #     - "src/**"
   pull_request:
     branches: main
 
@@ -18,7 +20,7 @@ permissions:
 jobs:
   build:
     # Name the Job
-    name: semantic-release
+    name: prerelease
     # Set the agent to run on
     runs-on: ${{ matrix.os }}
     strategy:
@@ -62,4 +64,4 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           # run semantic-release
-          make release-ci
+          make prerelease-ci

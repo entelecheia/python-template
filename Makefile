@@ -123,8 +123,17 @@ release-noop: ## release without changing anything
 release-ci: ## release in CI
 	@poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>"
 
+prerelease-noop: ## release a pre-release without changing anything
+	@poetry run semantic-release publish --prerelease --noop
+
+prerelease-ci: ## release a pre-release in CI
+	@poetry run semantic-release publish --prerelease -v DEBUG -D commit_author="github-actions <action@github.com>"
+
 scm-version: ## returns the version from the setuptools_scm
 	@poetry run python -m setuptools_scm
+
+build: ## build the package
+	@poetry build
 
 ##@ Setup
 
