@@ -18,7 +18,7 @@ permissions:
 jobs:
   build:
     # Name the Job
-    name: Lint Code Base
+    name: semantic-release
     # Set the agent to run on
     runs-on: ${{ matrix.os }}
     strategy:

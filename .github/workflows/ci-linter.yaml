@@ -19,7 +19,7 @@ on:
 jobs:
   build:
     # Name the Job
-    name: Lint Code Base
+    name: lint-code-base
     # Set the agent to run on
     runs-on: ${{ matrix.os }}
     strategy:
